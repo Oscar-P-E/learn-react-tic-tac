@@ -38,7 +38,7 @@ export default function Board() {
   }
 
   return (
-    <>
+    <React.Fragment>
       <div className="status">{status}</div>
       <div className="row">
         <Square value={squares[0]} onSquareClick={() => handleClick(0)} />
@@ -55,7 +55,7 @@ export default function Board() {
         <Square value={squares[7]} onSquareClick={() => handleClick(7)} />
         <Square value={squares[8]} onSquareClick={() => handleClick(8)} />
       </div>
-    </>
+    </React.Fragment>
   );
 }
 
@@ -68,7 +68,7 @@ function calculateWinner(squares) {
     [1, 4, 7],
     [2, 5, 8],
     [0, 4, 8],
-    [2, 4, 6]
+    [2, 4, 6],
   ];
   for (let i = 0; i < lines.length; i++) {
     const [a, b, c] = lines[i];
